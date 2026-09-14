@@ -1,2 +1,2 @@
 [build]
-  publish = "PortafolioProfecional\MiPrimerServidor\src\main\resources\static"
+  publish = "MiPrimerServidor\src\main\resources\static"
