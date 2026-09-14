@@ -1,59 +1,212 @@
+:root {
+    --bg-color: #0a0a0c;          /* Fondo general negro profundo */
+    --pink-light: #fce7f3;        /* Rosa muy claro para textos principales */
+    --pink-soft: #f472b6;         /* Rosa medio para enlaces y detalles */
+    --pink-primary: #ec4899;      /* Rosa vibrante para títulos y bordes */
+    --pink-dark-1: #1f0914;       /* Tono de sección 1 */
+    --pink-dark-2: #2d0d1e;       /* Tono de sección 2 */
+    --pink-dark-3: #3b1028;       /* Tono de sección 3 */
+    --pink-accent: #9d174d;       /* Rosa oscuro para contrastes y encabezados de tablas */
+
+    --border-radius: 8px;
+    --spacing: 20px;
+}
+
+
+@font-face{
+    font-family: 'RingoCurls-Regular';
+    src: url("../fonts/RingoCurls-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+header h1 {
+    font-family: 'RingoCurls-Regular', sans-serif !important;
+}
 
 * {
-    font-family: Arial, "Arial Black";
+    box-sizing: border-box;
 }
 
 body {
-    background-color: bisque;
-
-    color: darkblue;
-
+    background-color: var(--bg-color);
+    color: var(--pink-light);
     line-height: 1.6;
-
     margin: 0;
     padding: 0;
-
-
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
-h1 {
-    color: #db2777;
+header {
+    background-color: var(--pink-dark-1);
+    color: var(--pink-light);
+    padding: var(--spacing);
+    text-align: center;
+    border-bottom: 2px solid var(--pink-primary);
+}
+
+header h1 {
+    color: var(--pink-primary);
+    margin-bottom: 5px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--pink-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--pink-dark-1);
+    color: var(--pink-light);
+    padding: var(--spacing);
+    text-align: center;
+    border-bottom: 2px solid var(--pink-primary);
+}
+
+header h1 {
+    color: var(--pink-primary);
+    margin-bottom: 5px;
+    font-family: "RingoCurls-Regular", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--pink-light);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--pink-primary);
+    color: #ffffff;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+}
+
+/* Diferenciación de tono rosa para cada sección */
+#sobre-mi {
+    background-color: var(--pink-dark-1);
+    border: 1px solid rgba(244, 114, 182, 0.3);
 }
 
 #experiencia {
-    background-color: lightblue;
-    padding: 20px 10px 15px 5px;
-    margin: 20px 10px  15px 5px;
-    border-radius: 8px;
+    background-color: var(--pink-dark-2);
+    border: 1px solid rgba(236, 72, 153, 0.4);
 }
 
-#sobre-mi, #habilidades{
-    background-color: #f472b6;
-    padding: 20px;
-    margin: 50px;
-    border-radius: 10px;
+#habilidades {
+    background-color: var(--pink-dark-3);
+    border: 1px solid rgba(244, 114, 182, 0.3);
+}
 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    color: #334155;
+h1, h2, h3 {
+    color: var(--pink-primary);
 }
 
 .destacado {
-    background-color: dimgrey;
+    background-color: rgba(236, 72, 153, 0.15);
     padding: 15px;
-    border-left: 4px solid darkblue;
+    border-left: 4px solid var(--pink-primary);
     font-weight: 500;
-
+    color: #ffffff;
+    border-radius: 4px;
 }
 
-.tablaBonita th, .tablaBonita tr{
+.foto-perfil {
+    float: right;
+    margin: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--pink-primary);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+}
 
-    border: 1px solid blue;
-    padding: 10px ;
+/* Estilos de Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid var(--pink-accent);
+    padding: 12px;
     text-align: left;
+    color: var(--pink-light);
 }
 
-.tablaBonita thead {
-    background-color: white;
-    color: brown;
+table thead {
+    background-color: var(--pink-accent);
+    color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(244, 114, 182, 0.08);
+}
+
+/* Estilos de Listas */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--pink-dark-1);
+    color: var(--pink-light);
+    text-align: center;
+    padding: var(--spacing);
+    border-top: 2px solid var(--pink-primary);
+}
+
+footer a {
+    color: var(--pink-soft);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--pink-primary);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
